@@ -1,5 +1,4 @@
 # Racket-2048
-# Project Title Goes Here (10 words maximum)
 
 ### Statement
 Describe your project. Why is it interesting? Why is it interesting to you personally? What do you hope to learn? 
@@ -71,10 +70,10 @@ You will be expected to turn in code, documentation, and data (as appropriate) a
 Write concrete steps for your schedule to move from concept to working system. 
 
 ### First Milestone (Sun Apr 9)
-Which portion of the work will be completed (and committed to Github) by this day? 
+Have the Title Screen and Help/Info Screen done, and have the block objects drawn onto the game screen.
 
 ### Second Milestone (Sun Apr 16)
-Which portion of the work will be completed (and committed to Github) by this day?  
+To have the keyboard events coded into the game and have the block objects able to combine. Also will have the sound effects coded in and have a current score display along with an all-time high score saved to a file and displayed.
 
 ### Public Presentation (Mon Apr 24, Wed Apr 26, or Fri Apr 28 [your date to be determined later])
 What additionally will be completed before the public presentation?
@@ -84,19 +83,16 @@ Here each group member gets a section where they, as an individual, detail what 
 
 Please use Github properly: each individual must make the edits to this file representing their own section of work.
 
-**Additional instructions for teams of three:** 
-* Remember that you must have prior written permission to work in groups of three (specifically, an approved `FP3` team declaration submission).
-* The team must nominate a lead. This person is primarily responsible for code integration. This work may be shared, but the team lead has default responsibility.
-* The team lead has full partner implementation responsibilities also.
-* Identify who is team lead.
-
 In the headings below, replace the silly names and GitHub handles with your actual ones.
 
-### Susan Scheme @susanscheme
-will write the....
+### Brett Lundy @blundy
+- [ ] write the code for the block objects
+- [ ] handle the sound effects for when the blocks combine.
+- [ ] display current score
+- [ ] save high score and display high score
 
 ### Leonard Lambda @lennylambda
 will work on...
 
-### Frank Funktions @frankiefunk 
-Frank is team lead. Additionally, Frank will work on...  
+### Group
+- [ ] handle how the block combine
