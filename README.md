@@ -5,20 +5,28 @@
  
 ### Analysis
 - Will you use data abstraction? How?
+
 The whole game should be abstracted away. The user shouldn't have access to anything that could potentially change anything within the game. 
 - Will you use recursion? How? 
+
 If there is any recursion then it will most likely be in drawing the images to the board each time the player makes a move.
-- Will you use map/filter/reduce? How? 
+- Will you use map/filter/reduce? How?
+
 I donot beleive there will be any use of map/filter/reduse.
 - Will you use object-orientation? How?
+
 I intend to make the blocks into objects that hold a few pieces of data.
 - Will you use functional approaches to processing your data? How?
+
 We are uncertain at this time if we will use any functional approaches to process our data.
 - Will you use state-modification approaches? How? (If so, this should be encapsulated within objects. `set!` pretty much should only exist inside an object.)
+
 The block objects and the board will use state-modification, for the data in the block objects and the condition of the board.
 - Will you build an expression evaluator, like we did in the symbolic differentatior and the metacircular evaluator?
+
 No we will not.
 - Will you use lazy evaluation approaches?
+
 I do not believe so.
 
 ### External Technologies
