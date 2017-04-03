@@ -4,36 +4,31 @@
 2048 is a game that involves a block of 16 slots that the user must find some way to move that will result in blocks with the same value being added together. Each legal move the player makes will also result in a new block taking up the space of a blank spot and if all 16 slots are full and no legal moves can be made the player loses. When the blocks are added together they are combined, reducing the number of blocks by one. The game is not meant to be "won" but to last longer and to improve your high score.
  
 ### Analysis
-
 - Will you use data abstraction? How?
-- Will you use recursion? How?
+The whole game should be abstracted away. The user shouldn't have access to anything that could potentially change anything within the game. 
+- Will you use recursion? How? 
+If there is any recursion then it will most likely be in drawing the images to the board each time the player makes a move.
 - Will you use map/filter/reduce? How? 
+I donot beleive there will be any use of map/filter/reduse.
 - Will you use object-orientation? How?
+I intend to make the blocks into objects that hold a few pieces of data.
 - Will you use functional approaches to processing your data? How?
+We are uncertain at this time if we will use any functional approaches to process our data.
 - Will you use state-modification approaches? How? (If so, this should be encapsulated within objects. `set!` pretty much should only exist inside an object.)
+The block objects and the board will use state-modification, for the data in the block objects and the condition of the board.
 - Will you build an expression evaluator, like we did in the symbolic differentatior and the metacircular evaluator?
+No we will not.
 - Will you use lazy evaluation approaches?
+I do not believe so.
 
 ### External Technologies
 The only thing that may classify as External Technologies is that we will be using sound effects for when the blocks combine.
 
 ### Data Sets or other Source Materials
-If you will be working with existing data, where will you get those data from? (Dowload from a website? Access in a database? Create in a simulation you will build? ...)
-
-How will you convert your data into a form usable for your project?  
-
-If you are pulling data from somewhere, actually go download it and look at it before writing the proposal. Explain in some detail what your plan is for accomplishing the necessary processing.
-
-If you are using some other starting materials, explain what they are. Basically: anything you plan to use that isn't code.
+The only Data sets or other Source Material we may use would be for the background music, and thats only if time permits us to add background music. 
 
 ### Deliverable and Demonstration
-Explain exactly what you'll have at the end. What will it be able to do at the live demo?
-
-What exactly will you produce at the end of the project? A piece of software, yes, but what will it do? Here are some questions to think about (and answer depending on your application).
-
-Will it run on some data, like batch mode? Will you present some analytical results of the processing? How can it be re-run on different source data?
-
-Will it be interactive? Can you show it working? This project involves a live demo, so interactivity is good.
+At the end we will have a fully playable game. It will be interactable and will rely on a human player to actually perform. Start of the game will involve two blocks randomly being added to the board and the user will have free rein from there to move the blocks. 
 
 ### Evaluation of Results
 We will know if we are successful if the game runs and nothing makes it crash, and if the high score can be saved and pulled to and from a file.
@@ -41,7 +36,7 @@ We will know if we are successful if the game runs and nothing makes it crash, a
 ## Architecture Diagram
 ![Architecture_Diagram](/2048-diagram.png?raw=true "Architecture Diagram")
 
-Create several paragraphs of narrative to explain the pieces and how they interoperate.
+Brett will be working on the block objects and Zixin will write the code for the keyboard events. The two parts will come together and then the game board will start and the user will give commands to the game and the board will update to reflect what the user inputed. 
 
 ## Schedule
 
