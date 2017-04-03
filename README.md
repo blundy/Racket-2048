@@ -1,12 +1,9 @@
 # Racket-2048
 
 ### Statement
-Describe your project. Why is it interesting? Why is it interesting to you personally? What do you hope to learn? 
-
+2048 is a game that involves a block of 16 slots that the user must find some way to move that will result in blocks with the same value being added together. Each legal move the player makes will also result in a new block taking up the space of a blank spot and if all 16 slots are full and no legal moves can be made the player loses. When the blocks are added together they are combined, reducing the number of blocks by one. The game is not meant to be "won" but to last longer and to improve your high score.
+ 
 ### Analysis
-Explain what approaches from class you will bring to bear on the project.
-
-Be explicit about the techiques from the class that you will use. For example:
 
 - Will you use data abstraction? How?
 - Will you use recursion? How?
@@ -17,19 +14,8 @@ Be explicit about the techiques from the class that you will use. For example:
 - Will you build an expression evaluator, like we did in the symbolic differentatior and the metacircular evaluator?
 - Will you use lazy evaluation approaches?
 
-The idea here is to identify what ideas from the class you will use in carrying out your project. 
-
-**Your project will be graded, in part, by the extent to which you adopt approaches from the course into your implementation, _and_ your discussion about this.**
-
 ### External Technologies
-You are encouraged to develop a project that connects to external systems. For example, this includes systems that:
-
-- retrieve information or publish data to the web
-- generate or process sound
-- control robots or other physical systems
-- interact with databases
-
-If your project will do anything in this category (not only the things listed above!), include this section and discuss.
+The only thing that may classify as External Technologies is that we will be using sound effects for when the blocks combine.
 
 ### Data Sets or other Source Materials
 If you will be working with existing data, where will you get those data from? (Dowload from a website? Access in a database? Create in a simulation you will build? ...)
@@ -50,24 +36,14 @@ Will it run on some data, like batch mode? Will you present some analytical resu
 Will it be interactive? Can you show it working? This project involves a live demo, so interactivity is good.
 
 ### Evaluation of Results
-How will you know if you are successful? 
-If you include some kind of _quantitative analysis,_ that would be good.
+We will know if we are successful if the game runs and nothing makes it crash, and if the high score can be saved and pulled to and from a file.
 
 ## Architecture Diagram
-Upload the architecture diagram you made for your slide presentation to your repository, and include it in-line here.
+![Architecture_Diagram](/2048-diagram.png?raw=true "Architecture Diagram")
 
 Create several paragraphs of narrative to explain the pieces and how they interoperate.
 
 ## Schedule
-Explain how you will go from proposal to finished product. 
-
-There are three deliverable milestones to explicitly define, below.
-
-The nature of deliverables depend on your project, but may include things like processed data ready for import, core algorithms implemented, interface design prototyped, etc. 
-
-You will be expected to turn in code, documentation, and data (as appropriate) at each of these stages.
-
-Write concrete steps for your schedule to move from concept to working system. 
 
 ### First Milestone (Sun Apr 9)
 Have the Title Screen and Help/Info Screen done, and have the block objects drawn onto the game screen.
@@ -76,14 +52,9 @@ Have the Title Screen and Help/Info Screen done, and have the block objects draw
 To have the keyboard events coded into the game and have the block objects able to combine. Also will have the sound effects coded in and have a current score display along with an all-time high score saved to a file and displayed.
 
 ### Public Presentation (Mon Apr 24, Wed Apr 26, or Fri Apr 28 [your date to be determined later])
-What additionally will be completed before the public presentation?
+Error/bug checking what we will most likely be spending the remaining time on. If time permits I(Brett Lundy) would like to try to add background music.
 
 ## Group Responsibilities
-Here each group member gets a section where they, as an individual, detail what they are responsible for in this project. Each group member writes their own Responsibility section. Include the milestones and final deliverable.
-
-Please use Github properly: each individual must make the edits to this file representing their own section of work.
-
-In the headings below, replace the silly names and GitHub handles with your actual ones.
 
 ### Brett Lundy @blundy
 - [ ] write the code for the block objects
@@ -91,8 +62,10 @@ In the headings below, replace the silly names and GitHub handles with your actu
 - [ ] display current score
 - [ ] save high score and display high score
 
-### Leonard Lambda @lennylambda
-will work on...
-
+### Zixin Wang @iris-w
+- [ ] create the title screen
+- [ ] create the help/info screen
+- [ ] create the game screen
+- [ ] write code for the keyboard events
 ### Group
-- [ ] handle how the block combine
+- [ ] handle how the blocks combine
