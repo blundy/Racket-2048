@@ -60,15 +60,15 @@ Error/bug checking what we will most likely be spending the remaining time on. I
 ## Group Responsibilities
 
 ### Brett Lundy @blundy
-- [ ] write the code for the block objects
+- [X] create the title screen
+- [X] create the help/info screen
+- [ ] create the game screen
+- [ ] write code for the keyboard events
+
+### Zixin Wang @iris-w
+- [X] write the code for the block objects
 - [ ] handle the sound effects for when the blocks combine.
 - [ ] display current score
 - [ ] save high score and display high score
-
-### Zixin Wang @iris-w
-- [ ] create the title screen
-- [ ] create the help/info screen
-- [ ] create the game screen
-- [ ] write code for the keyboard events
 ### Group
 - [ ] handle how the blocks combine
