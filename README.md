@@ -62,7 +62,7 @@ Error/bug checking what we will most likely be spending the remaining time on. I
 ### Brett Lundy @blundy
 - [X] create the title screen
 - [X] create the help/info screen
-- [ ] create the game screen
+- [X] create the game screen
 - [ ] write code for the keyboard events
 
 ### Zixin Wang @iris-w
