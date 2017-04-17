@@ -49,13 +49,13 @@ Brett will be working on the block objects and Zixin will write the code for the
 ## Schedule
 
 ### First Milestone (Sun Apr 9)
-Have the Title Screen and Help/Info Screen done, and have the block objects drawn onto the game screen.
+Have the Title Screen and Help/Info Screen done, and have the list of list of numbers for the board.
 
 ### Second Milestone (Sun Apr 16)
-To have the keyboard events coded into the game and have the block objects able to combine. Also will have the sound effects coded in and have a current score display along with an all-time high score saved to a file and displayed.
+After some though I(Bret Lundy) have changed the second milestone to be more attainable, so for this milestone we will have the random function for the board list, the random function to place the random number onto the board list, the board drawn 
 
 ### Public Presentation (Mon Apr 24, Wed Apr 26, or Fri Apr 28 [your date to be determined later])
-Error/bug checking what we will most likely be spending the remaining time on. If time permits I(Brett Lundy) would like to try to add background music.
+For the last milestone we will handle the move/combine function and the high score handler.Error/bug checking is also what we will be spending the remaining time on. If time permits I(Brett Lundy) would like to try to add background music.
 
 ## Group Responsibilities
 
