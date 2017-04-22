@@ -17,7 +17,7 @@
 
 ;;init board with rand numbers
 (define (init-board n)
-    (put-rand-piece (put-rand-piece (init-board n))))
+    (put-rand-piece (put-rand-piece (make-list n (make-list n 0)))))
   
 ;; get random piece from rand-dice list
 (define (choice ls)
