@@ -15,9 +15,9 @@
 ;;rand-list 2:4 == 9:1
 (define rand-dice '(2 2 2 2 2 2 2 2 2 4))
 
-;;init board with all 0s
+;;init board with rand numbers
 (define (init-board n)
-  (make-list n (make-list n 0)))
+    (put-rand-piece (put-rand-piece (init-board n))))
   
 ;; get random piece from rand-dice list
 (define (choice ls)
@@ -48,8 +48,35 @@
             (get-piece))
         lst))
 
-;;make an empty board 4x4
-(define board (init-board 4)) 
+;; merge numbers
+(define (merge num)
+    (cond [(<= (length num) 1) num]
+          [(= (first num) (second num))
+           (cons (* 2 (first num)) (merge (drop num 2)))]
+          [else (cons (first num) (merge (rest num)))]))
+
+(define (move-r num v left?)
+    (let* ([n (length num)]
+           [ls (merge (filter (lambda (x) (not (zero? x))) num))]
+           [els (make-list (- n (length ls)) v)])
+      (if left?
+          (append ls els)
+          (append els ls))))
+
+(define (move lst v left?)
+    (map (lambda (x) (move-r x v left?)) lst))
+
+;; move-functions
+(define (move-left lst)
+    (put-rand-piece (move lst 0 #t)))
+(define (move-right lst)
+    (put-rand-piece (move lst 0 #f)))
+(define (trans lsts)
+    (apply map list lsts))
+(define (move-up lst)
+    ((compose1 trans move-left trans) lst))
+(define (move-down lst)
+    ((compose1 trans move-right trans) lst))
 
 ;; GRAPHICS SECITON FOR THE BOARD;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Color scheme 
@@ -114,36 +141,66 @@
    (make-block-text n)
    (make-block n)))
 
-;; Makes a list of blocks given a list of block values
-(define (make-block-list init lst accum)
-  (cond ((null? lst) init) 
-        ((not (pair? lst)) (make-complete-block lst)) 
-        (else (accum  
-               (make-block-list init (car lst) accum) 
-               (make-block-list init (cdr lst) accum)))))
-
-;; Makes a grid of blocks given a block image list
-(define (make-grid-of-blocks init lst x y)
-  (cond ((null? lst) init) 
-        ((not (pair? lst)) lst) 
-        (else (overlay/xy
-               (make-grid-of-blocks init (car lst) 0 (+ y 55))
-               x y
-               (make-grid-of-blocks init (cdr lst) x y)))))
-
-;; empty block list 
-(define starting-block-list (make-block-list '() board cons))
-
-;; Makes the board that will contain nothing
-(define make-empty-board
-  (square board-side 'solid board-color))
-
-;; Makes the starting board that will contain an empty grid
-;; The reason I made a "starting board" is to have a base for when we
-;;    add a reset button we can just always have a empty grid ready
-(define make-starting-board
-  (overlay/xy
-   (make-grid-of-blocks (square 0 'solid "black") starting-block-list 55 0)
-   -5 -5
-   make-empty-board))
 ;; END OF GRPAHICS SECTION;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; append function for images made
+(define (append-image image position overlap)
+    (if (<= (length image) 1)
+        (car image)
+        (let* ([a (first image)]
+               [b (second image)]
+               [img (apply overlay/xy
+                           (append (list a) (position a overlap) (list b)))])
+          (append-image (cons img (drop image 2)) position overlap))))
+
+(define (append-horizontal image [overlap 0])
+    (append-image image
+                  (lambda (img obj) (list (- (image-width img) obj) 0))
+                  overlap))
+
+(define (append-vertical image [overlap 0])
+    (append-image image
+                  (lambda (img obj) (list 0 (- (image-height img) obj)))
+                  overlap))
+
+;; check if the game should finish
+(define all-direct (list move-right move-down move-left move-up))
+
+(define (finished? lst)
+    (andmap (lambda (direction) (equal? lst (direction lst))) all-direct))
+
+;; key reflection
+(define (key->ops pressed)
+    (cond
+      [(key=? pressed "left")  move-left]
+      [(key=? pressed "right") move-right]
+      [(key=? pressed "up")    move-up]
+      [(key=? pressed "down")  move-down]
+      [else (lambda (x) x)]))
+
+
+;; game board in image
+(define (game-board-app board)
+    (let ([image (for/list ([ln board])
+                    (append-horizontal (map make-complete-block ln) board-spacing))])
+      (append-vertical image board-spacing)))
+
+;; game-over overlay
+(define (game-over board)
+    (let* ([game-board (game-board-app board)]
+           [layer (square (image-width game-board) 'solid *default-tile-bg-color*)])
+      (overlay (text "Game Over!" 40 *default-tile-fg-color*))))
+
+;; user pressed key / making action
+(define (user-action board key)
+    ((key->ops key) board))
+
+;; game start function
+(define (game-start n)
+    (big-bang (init-board n)
+              (to-draw game-board-app)
+              (on-key user-action)
+              (stop-when finished? game-over)
+              (name "2048-racket")))
+
+(game-start 4)
