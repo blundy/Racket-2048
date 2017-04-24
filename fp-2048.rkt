@@ -5,8 +5,8 @@
 
 ;; Usedfor the Graphics part of the board ;;;;;;;;;;;;;;;;;;;;;
 (define block-amount 4)
-(define text-size 20)
-(define block-side 50)
+(define text-size 30)
+(define block-side 110)
 (define board-spacing 5)
 (define board-side (+ (* block-amount block-side)
                        (* (add1 block-amount) board-spacing)))
@@ -182,14 +182,14 @@
 ;; game board in image
 (define (game-board-app board)
     (let ([image (for/list ([ln board])
-                    (append-horizontal (map make-complete-block ln) board-spacing))])
-      (append-vertical image board-spacing)))
+                    (append-horizontal (map make-complete-block ln) -5))])
+      (append-vertical image -5)))
 
 ;; game-over overlay
 (define (game-over board)
     (let* ([game-board (game-board-app board)]
            [layer (square (image-width game-board) 'solid *default-tile-bg-color*)])
-      (overlay (text "Game Over!" 40 *default-tile-fg-color*))))
+      (overlay (text "Game Over!" 40 *default-tile-fg-color*) layer)))
 
 ;; user pressed key / making action
 (define (user-action board key)
