@@ -52,10 +52,10 @@ Brett will be working on the block objects and Zixin will write the code for the
 Have the Title Screen and Help/Info Screen done, and have the list of list of numbers for the board.
 
 ### Second Milestone (Sun Apr 16)
-After some though I(Bret Lundy) have changed the second milestone to be more attainable, so for this milestone we will have the random function for the board list, the random function to place the random number onto the board list, the board drawn 
+After some though I(Bret Lundy) have changed the second milestone to be more attainable, so for this milestone we will have the random function for the board list, the random function to place the random number onto the board list and the board drawn 
 
 ### Public Presentation (Mon Apr 24, Wed Apr 26, or Fri Apr 28 [your date to be determined later])
-For the last milestone we will handle the move/combine function and the high score handler.Error/bug checking is also what we will be spending the remaining time on. If time permits I(Brett Lundy) would like to try to add background music.
+For the last milestone we will handle the move/combine function and the score handler.Error/bug checking is also what we will be spending the remaining time on. If time permits I(Brett Lundy) would like to try to add background music and sound effects.
 
 ## Group Responsibilities
 
@@ -63,12 +63,9 @@ For the last milestone we will handle the move/combine function and the high sco
 - [X] create the title screen
 - [X] create the help/info screen
 - [X] create the game screen
-- [ ] write code for the keyboard events
+- [X] write code for the keyboard events
 
 ### Zixin Wang @iris-w
 - [X] write the code for the block objects
-- [ ] handle the sound effects for when the blocks combine.
-- [ ] display current score
-- [ ] save high score and display high score
-### Group
-- [ ] handle how the blocks combine
+- [X] display current score
+- [X] handle how the blocks combine
