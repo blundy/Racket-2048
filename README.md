@@ -12,7 +12,7 @@ The whole game is abstracted away. The user shouldn't have access to anything th
 One of the places we used resursion is with the score. it uses a function that uses fold on the car of a given list of lists, and then sums the remainder of the list through resursion.
 - Will you use map/filter/reduce? How?
 
-we used filter in one of our move functions and we used foldr for the score.
+We used filter in one of our move functions and we used foldr for the score.
 - Will you use object-orientation? How?
 
 The only thing we used that may count as object orientation would be our game-board-app, since it holds a board object and makes changes to it.
