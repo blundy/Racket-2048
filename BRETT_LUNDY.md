@@ -78,10 +78,25 @@ The code below is used to find a score for the game. It is given a list of lists
       (+ (foldr (lambda (x sum) (+ x sum)) 0 (car board)) (get-score (cdr board)))))
 ```
 
-## 4.
+## 4. Use of Let/Map
+This function was written by both myself and Zixin I included it bcause I like the use of let in this function that sets the image for the board to be printed to the scene. Also Map was used to apply the make-complete-block(see excerpt #2) function to our board list. 
 
 ```
-
+;; game board in image
+(define (game-board-app board)
+  (underlay/xy 
+   (underlay/xy 
+    (underlay/xy (square 512 'solid "white")
+                 52 52
+                 (let ([image (for/list ([ln board])
+                                (append-horizontal (map make-complete-block ln) -5))])
+                   (append-vertical image -5)))
+    52 22
+    (text/font "Score: " 30 "black"
+               #f 'roman 'normal 'bold #f))
+   150 22
+   (text/font (number->string (get-score board)) 30 "black"
+               #f 'roman 'normal 'bold #f)))
 ```
 
 ## 5. 
