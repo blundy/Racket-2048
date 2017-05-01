@@ -98,9 +98,3 @@ This function was written by both myself and Zixin I included it bcause I like t
    (text/font (number->string (get-score board)) 30 "black"
                #f 'roman 'normal 'bold #f)))
 ```
-
-## 5. 
-
-```
-
-```
