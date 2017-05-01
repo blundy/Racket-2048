@@ -211,7 +211,7 @@
 ;; Set home scrren
 (define (home-screen x)
   (underlay/xy (bitmap "2048-icon.png")
-              100
+              75
               350
               (text/font "Press i for info and p to play" 30 "black"
                          #f 'roman 'normal 'bold #f)))
